@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Albemarle';
+    src: url('../fonts/Albemarle/Albemarle.eot');
+    src: url('../fonts/Albemarle/Albemarle.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Albemarle/Albemarle.woff2') format('woff2'),
+        url('../fonts/Albemarle/Albemarle.woff') format('woff'),
+        url('../fonts/Albemarle/Albemarle.ttf') format('truetype'),
+        url('../fonts/Albemarle/Albemarle.svg#Albemarle') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Albemarle';
+}
