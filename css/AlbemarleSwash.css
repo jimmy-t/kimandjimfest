@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Albemarle Swash';
+    src: url('../fonts/AlbemarleSwash/AlbemarleSwash.eot');
+    src: url('../fonts/AlbemarleSwash/AlbemarleSwash.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AlbemarleSwash/AlbemarleSwash.woff2') format('woff2'),
+        url('../fonts/AlbemarleSwash/AlbemarleSwash.woff') format('woff'),
+        url('../fonts/AlbemarleSwash/AlbemarleSwash.ttf') format('truetype'),
+        url('../fonts/AlbemarleSwash/AlbemarleSwash.svg#AlbemarleSwash') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Albemarle Swash';
+}
