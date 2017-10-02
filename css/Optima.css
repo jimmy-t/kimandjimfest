@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Optima';
+    src: url('../fonts/Optima/Optima.eot');
+    src: url('../fonts/Optima/Optima.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Optima/Optima.woff2') format('woff2'),
+        url('../fonts/Optima/Optima.woff') format('woff'),
+        url('../fonts/Optima/Optima.ttf') format('truetype'),
+        url('../fonts/Optima/Optima.svg#Optima') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Optima';
+}
