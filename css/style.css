@@ -14,18 +14,84 @@
 html, body {
     height:100%;
 } 
-body 
-    {
-  font-family: "Albemarle", "Work Sans", Arial, sans-serif;
+body {
+  font-family: "Albemarle", Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-        background-image: url(../images/Save-the-Date-bg.png);
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 100%;
-    }
+  background-image: url(../images/Save-the-Date-bg.png);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+#jkfest-title {
+    vertical-align: middle;
+    font-size: 8rem;
+    line-height: 24rem;
+    margin-top: -8rem;
+    padding: 0;
+    color: ivory;
+    font-family: "Albemarle Swash", Arial, serif;
+}
+
+#jkfest-date {
+    vertical-align: middle;
+    font-size: 6rem;
+    line-height: 13rem;
+    margin-top: -11rem;
+    padding: 0;
+    padding-top: 2rem;
+    color: ivory;
+    font-family: "Albemarle Swash", Arial, serif;
+}
+
+#jkfest-location {
+    vertical-align: middle;
+    font-size: 2rem;
+    line-height: 8rem;
+    margin-top: -5.5rem;
+    padding: 0;
+    padding-top: 2rem;
+    color: ivory;
+    font-family: "Albemarle", Arial, serif;
+}
+
+.jk-tab-contents {
+    background-color: rgba(200, 200, 200, 0.85);
+    margin: 2rem 2rem 0rem 2rem;
+    border-radius: 4px;
+    font-size: medium;
+    font-family: "Century Gothic", Arial, serif;
+    border-color: #1d5a2a;
+    border-style: solid;
+    border-width: thin;
+    padding: 0.5rem;
+}
+
+.jk-tab-link-text {
+  font-size: x-large;
+  font-weight: bold;      
+}
+
+.jk-content-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.jk-content-link a:hover, a:active, a:focus {
+  color: rgba(234, 118, 0, 0.48);
+  outline: none;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: ivory;
+    background-color: rgba(52, 138, 66, 0.7);
+    border-color: #1d5a2a;
+    border-style: solid;
+    border-width: thin;
+}
 
 #page {
   position: relative;
@@ -55,7 +121,7 @@ body
 }
 
 a {
-  color: rgba(234, 118, 0, 1);
+  color: black;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -72,7 +138,7 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
-  font-family: "Albemarle", "Work Sans", Arial, sans-serif;
+  font-family: "Albemarle", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
 }
@@ -111,7 +177,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  font-family: "Albemarle", "Work Sans", Arial, serif;
+  font-family: "Albemarle", Arial, serif;
 }
 .jkfest-nav a {
   padding: 5px 10px;
@@ -838,15 +904,6 @@ form label {
   display: table-cell !important;
   vertical-align: top;
 }
-#jkfest-title {
-    vertical-align: middle;
-    font-size: 8rem;
-    line-height: 24rem;
-    margin-top: -8rem;
-    padding: 0;
-    color: ivory;
-  font-family: "Albemarle Swash", "Work Sans", Arial, serif;
-}
 #jkfest-header .display-tc h1, #jkfest-header .display-tc h2,
 #jkfest-counter .display-tc h1,
 #jkfest-counter .display-tc h2,
@@ -862,7 +919,7 @@ form label {
   margin-bottom: 0px;
   font-size: 100px;
   line-height: 1.5;
-  font-family: "Albemarle", "Work Sans", Arial, serif;
+  font-family: "Albemarle", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   #jkfest-header .display-tc h1,
@@ -1082,7 +1139,7 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Albemarle", "Work Sans", Arial, serif;
+  font-family: "Albemarle", Arial, serif;
   color: rgba(234, 118, 0, 1);
   font-size: 30px;
 }
@@ -1199,7 +1256,7 @@ form label {
   line-height: 1.5;
   font-weight: bold;
   color: rgba(234, 118, 0, 1);
-  font-family: "Albemarle", "Work Sans", Arial, serif;
+  font-family: "Albemarle", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .jkfest-heading h2 {
@@ -1664,7 +1721,7 @@ form label {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
-  font-family: "Albemarle", "Work Sans", Arial, sans-serif;
+  font-family: "Albemarle", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   -webkit-border-radius: 30px;
