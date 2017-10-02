@@ -126,6 +126,11 @@ body {
     height: 100% !important;
 }
 
+.jkfest-main-column {
+    margin-left: 5%;
+    width: 90%;
+}
+
 #page {
   position: relative;
   overflow-x: hidden;
