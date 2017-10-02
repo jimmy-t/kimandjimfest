@@ -14,6 +14,7 @@
 html, body {
     height:100%;
 } 
+
 body {
   font-family: "Albemarle", Arial, sans-serif;
   font-weight: 400;
@@ -64,7 +65,7 @@ body {
 
 .jk-tab-contents {
     background-color: rgba(255, 255, 255, 0.85);
-    margin: 2rem 2rem 0rem 2rem;
+    margin: 0rem 2rem 2rem 2rem;
     border-radius: 4px;
     font-size: medium;
     font-family: "Century Gothic", Arial, serif;
@@ -87,6 +88,10 @@ body {
 .jk-content-link a:hover, a:active, a:focus {
   color: rgba(234, 118, 0, 0.48);
   outline: none;
+}
+
+.nav-pills {
+    margin-bottom: 2rem;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
@@ -399,12 +404,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .jkfest-cover {
-  height: 900px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
 }
+
 .jkfest-cover .overlay {
   z-index: 0;
   position: absolute;
@@ -420,52 +425,43 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .jkfest-cover {
-    height: 1000px;
   }
 }
 .jkfest-cover .display-t,
 .jkfest-cover .display-tc {
-  height: 900px;
   display: table;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .jkfest-cover .display-t,
   .jkfest-cover .display-tc {
-    height: 1000px;
   }
 }
 .jkfest-cover.jkfest-cover-sm {
-  height: 1000px;
 }
 @media screen and (max-width: 768px) {
   .jkfest-cover.jkfest-cover-sm {
-    height: 400px;
   }
 }
 .jkfest-cover.jkfest-cover-sm .display-t,
 .jkfest-cover.jkfest-cover-sm .display-tc {
-  height: 1000px;
   display: table;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .jkfest-cover.jkfest-cover-sm .display-t,
   .jkfest-cover.jkfest-cover-sm .display-tc {
-    height: 400px;
   }
 }
 
 #jkfest-counter,
 #jkfest-event {
-  height: 850px;
   float: left;
 }
 #jkfest-counter .display-t,
 #jkfest-counter .display-tc,
 #jkfest-event .display-t,
 #jkfest-event .display-tc {
-  height: 700px;
   display: table;
   width: 100%;
 }
