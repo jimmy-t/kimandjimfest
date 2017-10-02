@@ -26,6 +26,10 @@ body {
   height: 100%;
 }
 
+.jk-under-construction {
+    height: 2rem;
+}
+
 #jkfest-title {
     vertical-align: middle;
     font-size: 8rem;
@@ -100,8 +104,16 @@ body {
     padding-bottom: 75%; // This is the aspect ratio
     height: 0;
     overflow: hidden;
+    font-size: medium;
+    border-color: #1d5a2a;
+    border-style: solid;
+    border-width: thin;
 }
+
 .google-maps iframe {
+    border-color: #1d5a2a;
+    border-style: solid;
+    border-width: thin;
     position: absolute;
     top: 0;
     left: 0;
