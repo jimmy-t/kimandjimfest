@@ -70,25 +70,19 @@ body {
     height: 8rem;
 }
 
-#jk-names {
+#jk-names-row {
   font-family: "Albemarle Swash", Arial, serif;
   text-align:center;
 }
 
-#jk-names-left {
-  width: 40%;
+.jk-names-cell {
   display: table-cell;    
-}
-
-#jk-names-center {
-  width: 20%;
-  display: table-cell; 
   vertical-align: middle;
 }
 
-#jk-names-right {
-  width: 40%;
-  display: table-cell; 
+.jk-names-bg {
+    height: 10rem;
+    opacity: 0.65;
 }
 
 .jk-tab-contents {
