@@ -112,6 +112,10 @@ body {
   outline: none;
 }
 
+.album-photo {
+  width: 100%;
+}
+
 .nav-pills {
     margin-bottom: 2rem;
 }
