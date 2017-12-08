@@ -181,10 +181,30 @@
 	
 	};
 
+	var urlParams;
+
+	var loadUrlParams = function () {
+	    var match,
+	        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+	        search = /([^&=]+)=?([^&]*)/g,
+	        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+	        query  = window.location.search.substring(1);
+
+	    urlParams = {};
+	    while (match = search.exec(query))
+	       urlParams[decode(match[1])] = decode(match[2]);
+	};
+
 
 	// Loading page
 	var loaderPage = function() {
 		$(".jkfest-loader").fadeOut("slow");
+
+		loadUrlParams();
+
+		if (urlParams.tab) {
+			$("#jk-pill-" + urlParams.tab).click();
+		}
 	};
 
 	var counter = function() {
