@@ -31,6 +31,11 @@ body {
     height: 2rem;
 }
 
+.jk-blog-date {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 #jkfest-title {
     vertical-align: middle;
     font-size: 8rem;
