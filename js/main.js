@@ -2,6 +2,57 @@
 	
 	'use strict';
 
+	var weddingDate = new Date(1527378300000);
+
+	console.log("Wedding date: " + weddingDate);
+
+	// Inspired by https://stackoverflow.com/a/8212878/381633
+    var millisecondsToStr = function(milliseconds) {
+
+            function numberEnding (number) {
+                return (number > 1) ? 's ' : ' ';
+            }
+
+            var output = '';
+
+            var temp = Math.floor(milliseconds / 1000);
+
+            var years = Math.floor(temp / 31536000);
+            if (years) {
+                output += years + ' year' + numberEnding(years);
+            }
+            var days = Math.floor((temp %= 31536000) / 86400);
+            if (days) {
+                output += days + ' day' + numberEnding(days);
+            }
+            var hours = Math.floor((temp %= 86400) / 3600);
+            if (hours) {
+                output += hours + ' hour' + numberEnding(hours);
+            }
+            var minutes = Math.floor((temp %= 3600) / 60);
+            if (minutes) {
+                output += minutes + ' minute' + numberEnding(minutes);
+            }
+            var seconds = temp % 60;
+            if (seconds) {
+                output += seconds + ' second' + numberEnding(seconds);
+            }
+
+            if (output == '') {
+              return 'less than a second';
+            } else {
+              return output;
+            }
+	};
+
+	var updateCountdown = function() {
+		var millisTilWedding = weddingDate.getTime() - Date.now();
+		var countdownMessage = millisTilWedding > 0 ? millisecondsToStr(millisTilWedding) : "We got married!!!";
+		$('#jkfest-countdown').text(countdownMessage);
+	};
+
+	setInterval(updateCountdown, 1000);
+
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
