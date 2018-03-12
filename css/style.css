@@ -83,6 +83,10 @@ body {
     height: 8rem;
 }
 
+.jk-tab-line-break {
+  display: block;
+}
+
 #jk-names-row {
   font-family: "Albemarle Swash", Arial, serif;
   text-align:center;

@@ -4,13 +4,11 @@
 
 	var weddingDate = new Date(1527378300000);
 
-	console.log("Wedding date: " + weddingDate);
-
 	// Inspired by https://stackoverflow.com/a/8212878/381633
     var millisecondsToStr = function(milliseconds) {
 
             function numberEnding (number) {
-                return (number > 1) ? 's ' : ' ';
+                return (number > 1 || number == 0) ? 's ' : ' ';
             }
 
             var output = '';
@@ -26,15 +24,15 @@
                 output += days + ' day' + numberEnding(days);
             }
             var hours = Math.floor((temp %= 86400) / 3600);
-            if (hours) {
+            if (hours || days) {
                 output += hours + ' hour' + numberEnding(hours);
             }
             var minutes = Math.floor((temp %= 3600) / 60);
-            if (minutes) {
+            if (minutes || hours || days) {
                 output += minutes + ' minute' + numberEnding(minutes);
             }
             var seconds = temp % 60;
-            if (seconds) {
+            if (seconds || minutes || hours || days) {
                 output += seconds + ' second' + numberEnding(seconds);
             }
 
