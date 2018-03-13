@@ -85,6 +85,7 @@ body {
 
 .jk-tab-line-break {
   display: block;
+  content: " ";   
 }
 
 #jk-names-row {
