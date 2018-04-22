@@ -144,6 +144,11 @@ body {
     font-family: "Century Gothic", Arial, serif;
 }
 
+.big-link {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+
 .album-photo {
   width: auto;
   max-height: 98vh;
