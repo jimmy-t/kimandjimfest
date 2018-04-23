@@ -144,9 +144,36 @@ body {
     font-family: "Century Gothic", Arial, serif;
 }
 
+.jk-timeline-table {
+  #padding: 10px;
+}
+
+#jk-timeline-label {
+  border: none;
+}
+
+.jk-timeline-table td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.jk-timeline-left {
+  font-weight: bold;
+  text-align: right;
+}
+
+.jk-timeline-right {
+  text-align: left;
+}
+
 .big-link {
     font-size: 2.5rem;
     line-height: 2.5rem;
+}
+
+.timeline-photo {
+  width: auto;
+  max-width: 50%;
 }
 
 .album-photo {
