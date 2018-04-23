@@ -225,7 +225,6 @@
 			} else {
 				$('.js-top').removeClass('active');
 			}
-
 		});
 	
 	};
@@ -243,7 +242,6 @@
 	    while (match = search.exec(query))
 	       urlParams[decode(match[1])] = decode(match[2]);
 	};
-
 
 	// Loading page
 	var loaderPage = function() {
@@ -281,7 +279,6 @@
 		$(window).stellar();
 	};
 
-	
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
