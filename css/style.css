@@ -171,9 +171,14 @@ body {
     line-height: 2.5rem;
 }
 
+.timeline-container {
+  display: table-cell;
+}
+
 .timeline-photo {
   width: auto;
-  max-width: 50%;
+  max-width: 100%;
+  vertical-align: top;
 }
 
 .album-photo {
