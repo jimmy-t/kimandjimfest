@@ -26,11 +26,11 @@
     var canvasWidth = 200; 
     var canvasHeight = 200;
 
-    var spriteWidth = 120; 
+    var spriteWidth = 180;//120; 
     var spriteHeight = 54; 
 
     var rows = 2; 
-    var cols = 4; 
+    var cols = 6; 
 
     var trackRight = 0; 
     var trackLeft = 1; 
@@ -39,10 +39,10 @@
     var height = spriteHeight/rows; 
 
     var curFrame = 0; 
-    var frameCount = 4; 
+    var frameCount = 6; 
 
     var x=0;
-    var y=200; 
+    var y=100; 
 
     var srcX; 
     var srcY; 
@@ -50,8 +50,8 @@
     var dirX = "none";
     var dirY = "none";
 
-    var speedX = 4; 
-    var speedY = 4; 
+    var speedX = 2; 
+    var speedY = 2; 
 
     var canvas = document.getElementById('canvas');
     canvas.width = canvasWidth;
@@ -60,17 +60,18 @@
     var ctx = canvas.getContext("2d");
 
     var character = new Image(); 
-    character.src = "8-bit-horse-sprite.png";
+    character.src = "8-bit-horse-sprite-with-pause.png";
 
     function updateFrame(){
-        curFrame = ++curFrame % frameCount; 
+        curFrame = ++curFrame % frameCount;
+        var allowMove = curFrame != 1 && curFrame != 2 && curFrame != 4 && curFrame != 5;
         srcX = curFrame * width; 
         ctx.clearRect(x,y,width,height); 
 
         if (dirX == "left"){
             if (x > 0) {
                 srcY = trackLeft * height; 
-                x -= speedX; 
+                if (allowMove) x -= speedX; 
             } else {
                 dirX = "right";
             }
@@ -79,18 +80,18 @@
         if (dirX == "right"){
             if (x < canvasWidth - width) {
                 srcY = trackRight * height; 
-                x += speedX; 
+                if (allowMove) x += speedX; 
             } else {
                 dirX = "left";
             }
         }
 
         if (dirY == "up" && y > 0){
-            y -= speedY; 
+            if (allowMove) y -= speedY; 
         }
 
         if (dirY == "down" && y < canvasHeight - height){
-            y += speedY; 
+            if (allowMove) y += speedY; 
         }
     }
 
@@ -115,7 +116,7 @@
         dirY = "down";
     }
 
-    setInterval(draw,150);
+    setInterval(draw,120);
 
  </script>
  </body>
