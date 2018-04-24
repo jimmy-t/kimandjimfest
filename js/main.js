@@ -54,15 +54,15 @@
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-	    var container = $("#jkfest-offcanvas, .js-jkfest-nav-toggle");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+		    var container = $("#jkfest-offcanvas, .js-jkfest-nav-toggle");
+		    if (!container.is(e.target) && container.has(e.target).length === 0) {
 
-	    	if ( $('body').hasClass('offcanvas') ) {
+		    	if ( $('body').hasClass('offcanvas') ) {
 
-    			$('body').removeClass('offcanvas');
-    			$('.js-jkfest-nav-toggle').removeClass('active');
-	    	}
-	    }
+	    			$('body').removeClass('offcanvas');
+	    			$('.js-jkfest-nav-toggle').removeClass('active');
+		    	}
+		    }
 		});
 
 	};
@@ -279,6 +279,55 @@
 		$(window).stellar();
 	};
 
+	var setupTimelineFocus = function() {
+		var focusDay = "none",
+		    $fri = $("#fri-timeline"),
+		    $sat = $("#sat-timeline"),
+		    $sun = $("#sun-timeline");
+
+		$fri.click(function (e) {
+			$fri.show();
+
+			if (focusDay == "fri") {
+				$sat.show();
+				$sun.show();
+				focusDay = "none";
+			} else {
+				$sat.hide();
+				$sun.hide();
+				focusDay = "fri";
+			}
+		});
+
+		$sat.click(function (e) {
+			$sat.show();
+
+			if (focusDay == "sat") {
+				$fri.show();
+				$sun.show();
+				focusDay = "none";
+			} else {
+				$fri.hide();
+				$sun.hide();
+				focusDay = "sat";
+			}
+		});
+		
+		$sun.click(function (e) {
+			$sun.show();
+
+			if (focusDay == "sun") {
+				$sat.show();
+				$fri.show();
+				focusDay = "none";
+			} else {
+				$sat.hide();
+				$fri.hide();
+				focusDay = "sun";
+			}
+		});
+	};
+
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
@@ -291,6 +340,7 @@
 		loaderPage();
 		counter();
 		counterWayPoint();
+		setupTimelineFocus();
 	});
 
 
