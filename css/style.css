@@ -27,6 +27,30 @@ body {
   height: 100%;
 }
 
+td {
+  width:50%;
+  vertical-align: top;
+  padding-bottom:1rem;
+}
+
+.td-right {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.td-left {
+  padding-right:1rem;
+}
+
+.td-top {
+  padding-top:1rem;
+}
+
+.timeline-image {
+  border: black;
+  border-style: solid;
+}
+
 .jk-under-construction {
     height: 2rem;
 }
@@ -1185,6 +1209,7 @@ form label {
     width: 100%;
   }
 }
+
 
 .heart {
   position: absolute;
