@@ -10,6 +10,7 @@
     canvas {
         border:1px solid #d3d3d3;
         background-color: #00AA00;
+        width: 100%;
     }
     </style>
  <title>Sko!</title>
@@ -23,8 +24,8 @@
  <button onclick='moveDown()'>Down</button>
 
  <script>
-    var canvasWidth = 600; 
-    var canvasHeight = 600;
+    var canvasWidth = 300; 
+    var canvasHeight = 100;
 
     var spriteWidth = 180;
     var spriteHeight = 54;
@@ -66,6 +67,7 @@
     var framesPerMove = 6;
     var moveCountdown = 0;
 
+    //ctx.scale(0.5, 0.5);
     ctx.drawImage(character,srcX,srcY,width,height,x,y,width,height);
 
     function updateFrame(){
