@@ -10,7 +10,9 @@
     canvas {
         border:1px solid #d3d3d3;
         background-color: #00AA00;
-        width: 100%;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
         height: auto;
     }
     </style>
@@ -25,8 +27,8 @@
  <button onclick='moveDown()'>Down</button>
 
  <script>
-    var canvasWidth = 300; 
-    var canvasHeight = 100;
+    var canvasWidth = 300;
+    var canvasHeight = 300;
 
     var spriteWidth = 180;
     var spriteHeight = 54;
@@ -43,8 +45,8 @@
     var curFrame = 0; 
     var frameCount = 6; 
 
-    var x=0;
-    var y=100; 
+    var x = Math.floor(Math.random() * (canvasWidth - width));
+    var y = Math.floor(Math.random() * (canvasHeight - height));
 
     var srcX = curFrame * width; 
     var srcY = 0; 
@@ -52,8 +54,12 @@
     var dirX = "none";
     var dirY = "none";
 
-    var speedX = 1; 
-    var speedY = 1; 
+    var speedX = 1;
+    var minSpeedX = 1;
+    var maxSpeedX = 2;
+    var speedY = 1;
+    var minSpeedY = 1; 
+    var maxSpeedY = 2;
 
     var canvas = document.getElementById('canvas');
     canvas.width = canvasWidth;
@@ -65,19 +71,63 @@
     character.src = "8-bit-lil-sebastian-sprite-with-pause.png";
     //character.src = "8-bit-horse-sprite-with-pause.png";
 
-    var framesPerMove = 6;
+    var framesPerMove = 1;
     var moveCountdown = 0;
 
     //ctx.scale(0.5, 0.5);
     ctx.drawImage(character,srcX,srcY,width,height,x,y,width,height);
 
+    var boundarySize = Math.max(width, height) * 2;
+    var wasInBoundary = false;
+    var switchedAlready = false;
+
+    function inEdgeBoundary() {
+        return x < boundarySize 
+                    || x > canvasWidth - boundarySize
+                    || y < boundarySize
+                    || y > canvasHeight - boundarySize;
+    }
+
+    function switchSpeeds() {
+        var leavingBoundary = wasInBoundary && inEdgeBoundary();
+
+        if (leavingBoundary) {
+            switchedAlready = false;
+        }
+
+        if (inEdgeBoundary()) {
+            wasInBoundary = true;
+            return;
+        }
+
+        wasInBoundary = false;
+
+        if (switchedAlready) {
+            return;
+        }
+
+        switchedAlready = true;
+
+        speedX = Math.floor(Math.random() * maxSpeedX) + minSpeedX;
+        speedY = Math.floor(Math.random() * maxSpeedY) + minSpeedY;
+
+        if (speedX == maxSpeedX) {
+            speedY = minSpeedY;
+        }
+
+        if (speedY == maxSpeedY) {
+            speedX = minSpeedX;
+        }
+    };
+
     function updateFrame(){
         curFrame = ++curFrame % frameCount;
         moveCountdown = ++moveCountdown % framesPerMove;
         var allowMove = curFrame != 1 && curFrame != 2 && curFrame != 4 && curFrame != 5;
-        allowMove &= moveCountdown == 0;
+        allowMove = true;//&= moveCountdown == 0;
         srcX = curFrame * width; 
         ctx.clearRect(x,y,width,height); 
+        switchSpeeds();
 
         if (dirX == "left"){
             if (x > 0) {
@@ -97,12 +147,20 @@
             }
         }
 
-        if (dirY == "up" && y > 0){
-            if (allowMove) y -= speedY; 
+        if (dirY == "up"){
+            if (y > 0) {
+                if (allowMove) y -= speedY;
+            } else {
+                dirY = "down";
+            }
         }
 
-        if (dirY == "down" && y < canvasHeight - height){
-            if (allowMove) y += speedY; 
+        if (dirY == "down"){
+            if (y < canvasHeight - height) {
+                if (allowMove) y += speedY; 
+            } else {
+                dirY = "up";
+            }
         }
     }
 
@@ -127,7 +185,20 @@
         dirY = "down";
     }
 
-    setInterval(draw,100);
+    setInterval(draw,50);
+
+    if ((Math.floor(Math.random()) * 1) == 0) {
+        moveLeft();
+    } else {
+        moveRight();
+    }
+
+
+    if ((Math.floor(Math.random()) * 1) == 0) {
+        moveDown();
+    } else {
+        moveUp();
+    }
 
  </script>
  </body>
