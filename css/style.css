@@ -60,6 +60,10 @@ td {
     font-weight: bold;
 }
 
+.jk-names-bg.jk-heart-spacer {
+  height:5rem;
+}
+
 #jkfest-title {
     vertical-align: middle;
     font-size: 8rem;
