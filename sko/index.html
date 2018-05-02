@@ -15,26 +15,30 @@
         margin-right: 15%;
         height: auto;
     }
+
+    #buttons {
+        text-align: center;
+    }
     </style>
  <title>Sko!</title>
  </head>
  <body>
  
  <canvas id='canvas'></canvas><br />
- <button onclick='moveLeft()'>Left</button>
- <button onclick='moveRight()'>Right</button>
- <button onclick='moveUp()'>Up</button>
- <button onclick='moveDown()'>Down</button>
+<div id='buttons'>
+    <button onclick='stepLeft()'>Left Hoof</button>
+    <button onclick='stepRight()'>Right Hoof</button>
+</div>
 
  <script>
     var canvasWidth = 300;
     var canvasHeight = 300;
 
-    var spriteWidth = 180;
+    var spriteWidth = 120;
     var spriteHeight = 54;
 
     var rows = 2; 
-    var cols = 6; 
+    var cols = 4; 
 
     var trackRight = 0; 
     var trackLeft = 1; 
@@ -43,7 +47,7 @@
     var height = spriteHeight/rows; 
 
     var curFrame = 0; 
-    var frameCount = 6; 
+    var frameCount = 4; 
 
     var x = Math.floor(Math.random() * (canvasWidth - width));
     var y = Math.floor(Math.random() * (canvasHeight - height));
@@ -68,13 +72,11 @@
     var ctx = canvas.getContext("2d");
 
     var character = new Image(); 
-    character.src = "8-bit-lil-sebastian-sprite-with-pause.png";
-    //character.src = "8-bit-horse-sprite-with-pause.png";
+    character.src = "8-bit-lil-sebastian-sprite.png";
 
     var framesPerMove = 1;
     var moveCountdown = 0;
 
-    //ctx.scale(0.5, 0.5);
     ctx.drawImage(character,srcX,srcY,width,height,x,y,width,height);
 
     var boundarySize = Math.max(width, height) * 2;
@@ -185,7 +187,7 @@
         dirY = "down";
     }
 
-    setInterval(draw,50);
+    //setInterval(draw,50);
 
     if ((Math.floor(Math.random()) * 1) == 0) {
         moveLeft();
@@ -198,6 +200,61 @@
         moveDown();
     } else {
         moveUp();
+    }
+
+    document.onkeydown = handleKeyDown;
+    document.onkeyup = handleKeyUp;
+
+    var allowStepLeft = true;
+    var allowStepRight = true;
+
+    function handleKeyDown(e) {
+
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        } else if (e.keyCode == '40') {
+            // down arrow
+        } else if (e.keyCode == '37') {
+           // left arrow
+           if (allowStepLeft) {
+                stepLeft();
+           }
+           allowStepLeft = false;
+        } else if (e.keyCode == '39') {
+           // right arrow
+           if (allowStepRight) {
+                stepRight();
+           }
+           allowStepRight = false;
+        }
+    }
+    
+    function handleKeyUp(e) {
+
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        } else if (e.keyCode == '40') {
+            // down arrow
+        } else if (e.keyCode == '37') {
+           // left arrow
+           allowStepLeft = true;
+        } else if (e.keyCode == '39') {
+           allowStepRight = true;
+        }
+    }
+
+    function stepLeft() {
+        moveLeft();
+        draw();
+    }
+
+    function stepRight() {
+        moveRight();
+        draw();
     }
 
  </script>
